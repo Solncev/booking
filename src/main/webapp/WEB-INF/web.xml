@@ -6,31 +6,31 @@
          version="2.5">
 
     <!--Freemarker  -->
-    <!--<servlet>-->
-        <!--<servlet-name>freemarker</servlet-name>-->
-        <!--<servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>-->
-        <!--&lt;!&ndash;Freemarker Settings&ndash;&gt;-->
-        <!--<init-param>-->
-            <!--<param-name>TemplatePath</param-name>-->
-            <!--<param-value>/views</param-value>-->
-        <!--</init-param>-->
-        <!--<init-param>-->
-            <!--<param-name>default_encoding</param-name>-->
-            <!--<param-value>UTF-8</param-value>-->
-        <!--</init-param>-->
-        <!--<init-param>-->
-            <!--<param-name>output_encoding</param-name>-->
-            <!--<param-value>UTF-8</param-value>-->
-        <!--</init-param>-->
-        <!--<init-param>-->
-            <!--<param-name>ExceptionOnMissingTemplate</param-name>-->
-            <!--<param-value>true</param-value>-->
-        <!--</init-param>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>freemarker</servlet-name>-->
-        <!--<url-pattern>*.ftl</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet>
+        <servlet-name>freemarker</servlet-name>
+        <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
+        <!--Freemarker Settings-->
+        <init-param>
+            <param-name>TemplatePath</param-name>
+            <param-value>/views</param-value>
+        </init-param>
+        <init-param>
+            <param-name>default_encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>output_encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ExceptionOnMissingTemplate</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>freemarker</servlet-name>
+        <url-pattern>*.ftl</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>Login</servlet-name>
@@ -65,36 +65,36 @@
         <url-pattern>/account</url-pattern>
     </servlet-mapping>
 
-    <filter>
-        <filter-name>Authentication</filter-name>
-        <filter-class>ru.itis.kpfu.filters.SecretFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>Authentication</filter-name>
-        <url-pattern>/account</url-pattern>
-    </filter-mapping>
-    <filter>
-        <filter-name>AuthenticationSecret</filter-name>
-        <filter-class>ru.itis.kpfu.filters.LoginFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>AuthenticationSecret</filter-name>
-        <url-pattern>/login</url-pattern>
-    </filter-mapping>
-    <filter>
-        <filter-name>CookieLogin</filter-name>
-        <filter-class>ru.itis.kpfu.filters.LoginCookieFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>CookieLogin</filter-name>
-        <url-pattern>/login</url-pattern>
-    </filter-mapping>
-    <filter>
-        <filter-name>CookieSecret</filter-name>
-        <filter-class>ru.itis.kpfu.filters.SecretCookieFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>CookieSecret</filter-name>
-        <url-pattern>/account</url-pattern>
-    </filter-mapping>
+    <!--<filter>-->
+        <!--<filter-name>Authentication</filter-name>-->
+        <!--<filter-class>ru.itis.kpfu.filters.SecretFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>Authentication</filter-name>-->
+        <!--<url-pattern>/account</url-pattern>-->
+    <!--</filter-mapping>-->
+    <!--<filter>-->
+        <!--<filter-name>AuthenticationSecret</filter-name>-->
+        <!--<filter-class>ru.itis.kpfu.filters.LoginFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>AuthenticationSecret</filter-name>-->
+        <!--<url-pattern>/login</url-pattern>-->
+    <!--</filter-mapping>-->
+    <!--<filter>-->
+        <!--<filter-name>CookieLogin</filter-name>-->
+        <!--<filter-class>ru.itis.kpfu.filters.LoginCookieFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>CookieLogin</filter-name>-->
+        <!--<url-pattern>/login</url-pattern>-->
+    <!--</filter-mapping>-->
+    <!--<filter>-->
+        <!--<filter-name>CookieSecret</filter-name>-->
+        <!--<filter-class>ru.itis.kpfu.filters.SecretCookieFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>CookieSecret</filter-name>-->
+        <!--<url-pattern>/account</url-pattern>-->
+    <!--</filter-mapping>-->
 </web-app>

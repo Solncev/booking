@@ -25,6 +25,7 @@ public class UserRepositoryImpl implements UserRepository {
             preparedStatement.setString(3, user.getPassword());
             preparedStatement.setString(4, user.getName());
             preparedStatement.setString(5, user.getSurname());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -30,7 +30,7 @@ public class RegistrationServlet extends HttpServlet {
         String hash = PasswordHasher.getMD5Digest(request.getParameter("password"));
         User user = new User(request.getParameter("email"),
                 request.getParameter("login"),
-                request.getParameter("password"),
+                hash,
                 request.getParameter("firstname"),
                 request.getParameter("surname"));
 
@@ -44,7 +44,7 @@ public class RegistrationServlet extends HttpServlet {
                 response.sendRedirect("/login");
             }
         } else {
-            response.sendRedirect("/registration");
+            response.sendRedirect("/login");
         }
 
     }

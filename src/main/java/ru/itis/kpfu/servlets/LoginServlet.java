@@ -42,12 +42,11 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         String login = request.getParameter("login");
-        String password = PasswordHasher.getMD5Digest(request.getParameter("password"));
+        String hash = PasswordHasher.getMD5Digest(request.getParameter("password"));
         User user = userService.getClientByUsername(login);
-        PrintWriter printWriter = response.getWriter();
 
         if (user != null) {
-            if (password.equals(user.getPassword())) {
+            if (hash.equals(user.getPassword())) {
                 request.getSession().setAttribute("current_user", login);
                 Cookie cookie = new Cookie("login", login);
                 cookie.setMaxAge(60 * 60);
